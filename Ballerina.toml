@@ -5,3 +5,21 @@ version = "0.1.0"
 
 [build-options]
 observabilityIncluded = true
+
+[[platform.java11.dependency]]
+path = "./excel-native/build/libs/excel-native-1.0-SNAPSHOT.jar"
+groupId = "lahiru"
+artifactId = "excel-native"
+version = "1.0-SNAPSHOT"
+
+[[platform.java11.dependency]]
+path = "./dependencies/poi-5.0.0.jar"
+artifactId = "poi"
+groupId = "apache"
+version = "5.0.0"
+
+[[platform.java11.dependency]]
+path = "./dependencies/poi-ooxml-5.0.0.jar"
+artifactId = "poi-ooxml"
+groupId = "apache"
+version = "5.0.0"

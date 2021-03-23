@@ -13,13 +13,3 @@ dependencies {
     compile group: 'org.apache.poi', name: 'poi', version: '5.0.0'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
 }
-
-jar {
-    manifest {
-        attributes "Main-Class": "lahiru.ballerina.excel.Main"
-    }
-
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}

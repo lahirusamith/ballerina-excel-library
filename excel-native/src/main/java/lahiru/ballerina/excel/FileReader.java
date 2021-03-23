@@ -18,48 +18,48 @@ import java.util.List;
 
 public class FileReader {
 
-    public Workbook ReadFile(String fileLocation) throws IOException {
+    public static Workbook ReadFile(String fileLocation) throws IOException {
         FileInputStream file = new FileInputStream(new File(fileLocation));
         return new XSSFWorkbook(file);
     }
 
-    public Sheet getSheetAt(Workbook workbook, int index) {
+    public static Sheet getSheetAt(Workbook workbook, int index) {
           return workbook.getSheetAt(index);
     }
 
-    public Row getRowAt(Sheet sheet, int index) {
+    public static Row getRowAt(Sheet sheet, int index) {
         return sheet.getRow(index);
     }
 
-    public Cell getCellAt(Row row, int index) {
+    public static Cell getCellAt(Row row, int index) {
         return row.getCell(index);
     }
 
-    public CellType getCellTypeEnum(Cell cell){
+    public static CellType getCellTypeEnum(Cell cell){
         return cell.getCellType();
     }
 
-    public String getCellDataAsString(Cell cell) {
+    public static String getCellDataAsString(Cell cell) {
         return cell.getRichStringCellValue().getString();
     }
 
-    public double getCellDataAsDouble(Cell cell) {
+    public static double getCellDataAsDouble(Cell cell) {
         return cell.getNumericCellValue();
     }
 
-    public Date getCellDataAsDate(Cell cell) {
+    public static Date getCellDataAsDate(Cell cell) {
         return cell.getDateCellValue();
     }
 
-    public String getCellDataAsFormula(Cell cell) {
+    public static String getCellDataAsFormula(Cell cell) {
         return cell.getCellFormula();
     }
 
-    public boolean getCellDataAsBoolean(Cell cell) {
+    public static boolean getCellDataAsBoolean(Cell cell) {
         return cell.getBooleanCellValue();
     }
 
-    public List<String> getRowDataAsStrings(Row row, int index) {
+    public static List<String> getRowDataAsStrings(Row row, int index) {
         List<String> data = new ArrayList<>();
         for (Cell cell : row) {
             switch (cell.getCellType()) {
