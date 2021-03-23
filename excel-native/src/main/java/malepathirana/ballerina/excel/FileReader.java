@@ -59,9 +59,40 @@ public class FileReader {
         return cell.getBooleanCellValue();
     }
 
-    public static List<String> getRowDataAsStrings(Row row, int index) {
+    public static List<String> getRowDataAsStringArray(Row row) {
         List<String> data = new ArrayList<>();
         for (Cell cell : row) {
+            switch (cell.getCellType()) {
+                case STRING:
+                    data.add(cell.getRichStringCellValue().getString());
+                    break;
+                case NUMERIC:
+                    if (DateUtil.isCellDateFormatted(cell)) {
+                        data.add(cell.getDateCellValue() + "");
+                    } else {
+                        data.add(cell.getNumericCellValue() + "");
+                    }
+                    break;
+                case BOOLEAN:
+                    data.add(cell.getBooleanCellValue() + "");
+                    break;
+                case FORMULA:
+                    data.add(cell.getCellFormula() + "");
+                    break;
+                default: data.add("");
+            }
+        }
+        return data;
+    }
+
+    public static List<String> getRowDataAsStringArray(Row row, int upperIndex) {
+        return getRowDataAsStringArray(row, 0, upperIndex);
+    }
+
+    public static List<String> getRowDataAsStringArray(Row row, int lowerIndex, int upperIndex) {
+        List<String> data = new ArrayList<>();
+        for (int count = lowerIndex; count < upperIndex; count++) {
+            Cell cell = row.getCell(count);
             switch (cell.getCellType()) {
                 case STRING:
                     data.add(cell.getRichStringCellValue().getString());

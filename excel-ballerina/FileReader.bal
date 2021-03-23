@@ -196,13 +196,35 @@ function FileReader_getRowAt(Sheet arg0, int arg1) returns Row {
     return newObj;
 }
 
-# The function that maps to the `getRowDataAsStrings` method of `malepathirana.ballerina.excel.FileReader`.
+# The function that maps to the `getRowDataAsStringArray` method of `malepathirana.ballerina.excel.FileReader`.
+#
+# + arg0 - The `Row` value required to map with the Java method parameter.
+# + return - The `List` value returning from the Java mapping.
+function FileReader_getRowDataAsStringArray1(Row arg0) returns List {
+    handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray1(arg0.jObj);
+    List newObj = new (externalObj);
+    return newObj;
+}
+
+# The function that maps to the `getRowDataAsStringArray` method of `malepathirana.ballerina.excel.FileReader`.
 #
 # + arg0 - The `Row` value required to map with the Java method parameter.
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + return - The `List` value returning from the Java mapping.
-function FileReader_getRowDataAsStrings(Row arg0, int arg1) returns List {
-    handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStrings(arg0.jObj, arg1);
+function FileReader_getRowDataAsStringArray2(Row arg0, int arg1) returns List {
+    handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray2(arg0.jObj, arg1);
+    List newObj = new (externalObj);
+    return newObj;
+}
+
+# The function that maps to the `getRowDataAsStringArray` method of `malepathirana.ballerina.excel.FileReader`.
+#
+# + arg0 - The `Row` value required to map with the Java method parameter.
+# + arg1 - The `int` value required to map with the Java method parameter.
+# + arg2 - The `int` value required to map with the Java method parameter.
+# + return - The `List` value returning from the Java mapping.
+function FileReader_getRowDataAsStringArray3(Row arg0, int arg1, int arg2) returns List {
+    handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray3(arg0.jObj, arg1, arg2);
     List newObj = new (externalObj);
     return newObj;
 }
@@ -284,10 +306,23 @@ function malepathirana_ballerina_excel_FileReader_getRowAt(handle arg0, int arg1
     paramTypes: ["org.apache.poi.ss.usermodel.Sheet", "int"]
 } external;
 
-function malepathirana_ballerina_excel_FileReader_getRowDataAsStrings(handle arg0, int arg1) returns handle = @java:Method {
-    name: "getRowDataAsStrings",
+function malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray1(handle arg0) returns handle = @java:Method {
+    name: "getRowDataAsStringArray",
+    'class: "malepathirana.ballerina.excel.FileReader",
+    paramTypes: ["org.apache.poi.ss.usermodel.Row"]
+} external;
+
+function malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray2(handle arg0, int arg1) returns handle = @java:Method {
+    name: "getRowDataAsStringArray",
     'class: "malepathirana.ballerina.excel.FileReader",
     paramTypes: ["org.apache.poi.ss.usermodel.Row", "int"]
+} external;
+
+function malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray3(handle arg0, int arg1, int arg2) 
+returns handle = @java:Method {
+    name: "getRowDataAsStringArray",
+    'class: "malepathirana.ballerina.excel.FileReader",
+    paramTypes: ["org.apache.poi.ss.usermodel.Row", "int", "int"]
 } external;
 
 function malepathirana_ballerina_excel_FileReader_getSheetAt(handle arg0, int arg1) returns handle = @java:Method {
