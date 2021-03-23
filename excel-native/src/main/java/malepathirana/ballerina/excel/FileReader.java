@@ -17,8 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 public class FileReader {
-
-    public static Workbook ReadFile(String fileLocation) throws IOException {
+    public static Workbook readFile(String fileLocation) throws IOException {
         FileInputStream file = new FileInputStream(new File(fileLocation));
         return new XSSFWorkbook(file);
     }

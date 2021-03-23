@@ -1,5 +1,6 @@
 task build {
     dependsOn(":excel-native:build")
+    dependsOn(":excel-native:shadowJar")
     doLast {
         exec {
             commandLine 'sh', '-c', 'bal build'
