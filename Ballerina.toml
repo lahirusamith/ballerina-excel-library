@@ -1,6 +1,6 @@
 [package]
 org = "lahiru"
-name = "test_hackathon_packaging"
+name = "ballerina_excel_library"
 version = "0.1.0"
 
 [build-options]
