@@ -93,10 +93,9 @@ function getRowAt(Sheet arg0, int arg1) returns Row {
 #
 # + arg0 - The `Row` value required to map with the Java method parameter.
 # + return - The `List` value returning from the Java mapping.
-function getFullRowDataAsStringArray(Row arg0) returns List {
+function getFullRowDataAsStringArray(Row arg0) returns string[] {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray1(arg0.jObj);
-    List newObj = new (externalObj);
-    return newObj;
+    return convertToStringArray(externalObj);
 }
 
 # The function that maps to the `getRowDataAsStringArray` method of `malepathirana.ballerina.excel.FileReader`.
@@ -105,10 +104,9 @@ function getFullRowDataAsStringArray(Row arg0) returns List {
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + arg2 - The `int` value required to map with the Java method parameter.
 # + return - The `List` value returning from the Java mapping.
-function getRowDataAsStringArray(Row arg0, int arg1, int arg2) returns List {
+function getRowDataAsStringArray(Row arg0, int arg1, int arg2) returns string[] {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray3(arg0.jObj, arg1, arg2);
-    List newObj = new (externalObj);
-    return newObj;
+     return convertToStringArray(externalObj);
 }
 
 # The function that maps to the `getSheetAt` method of `malepathirana.ballerina.excel.FileReader`.
@@ -121,6 +119,31 @@ function getSheetAt(Workbook arg0, int arg1) returns Sheet {
     Sheet newObj = new (externalObj);
     return newObj;
 }
+
+function convertToStringArray(handle externalObj) returns string[] {
+    string[] sArray = [];
+    int size = sizeOfArrayList(externalObj);
+     int count = 0;
+     while count < size {
+         string? temp = java:toString(getFromArrayList(externalObj, count));
+         if (temp is string){
+              sArray.push(temp);
+         }
+         count = count + 1;
+     }
+     return sArray;
+}
+
+function getFromArrayList(handle arg0, int arg1) returns handle = @java:Method {
+    name: "get",
+    'class: "java.util.List",
+    paramTypes: ["int"]
+} external;
+
+function sizeOfArrayList(handle arg0) returns int = @java:Method {
+    name: "size",
+    'class: "java.util.List"
+} external;
 
 function malepathirana_ballerina_excel_FileReader_readFile(handle arg0) returns handle|error = @java:Method {
     name: "readFile",

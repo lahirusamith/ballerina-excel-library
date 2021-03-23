@@ -144,31 +144,6 @@ distinct class Enum {
     }
 }
 
-# Ballerina class mapping for the Java `java.util.List` interface.
-@java:Binding {'class: "java.util.List"}
-distinct class List {
-
-    *java:JObject;
-
-    # The `handle` field that stores the reference to the `java.util.List` object.
-    handle jObj;
-
-    # The init function of the Ballerina class mapping the `java.util.List` Java interface.
-    #
-    # + obj - The `handle` value containing the Java reference of the object.
-    function init(handle obj) {
-        self.jObj = obj;
-    }
-
-    # The function to retrieve the string representation of the Ballerina class mapping the `java.util.List` Java interface.
-    #
-    # + return - The `string` form of the Java object instance.
-    function toString() returns string {
-        return java:toString(self.jObj) ?: "null";
-    }
-}
-
-
 # Ballerina class mapping for the Java `java.util.Date` class.
 @java:Binding {'class: "java.util.Date"}
 distinct class Date {
