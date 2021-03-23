@@ -1,4 +1,4 @@
-package lahiru.ballerina.excel;
+package malepathirana.ballerina.excel;
 
 public class Main {
     public static void main(String[] args) {

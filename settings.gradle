@@ -1,0 +1,3 @@
+rootProject.name = 'ballerina-excel'
+include ':excel-native', ':excel-ballerina'
+

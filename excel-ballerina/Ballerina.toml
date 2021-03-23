@@ -1,5 +1,5 @@
 [package]
-org = "lahiru"
+org = "malepathirana"
 name = "ballerina_excel_library"
 version = "0.1.0"
 
@@ -7,19 +7,19 @@ version = "0.1.0"
 observabilityIncluded = true
 
 [[platform.java11.dependency]]
-path = "./excel-native/build/libs/excel-native-1.0-SNAPSHOT.jar"
-groupId = "lahiru"
+path = "../excel-native/build/libs/excel-native-1.0-SNAPSHOT.jar"
+groupId = "malepathirana"
 artifactId = "excel-native"
 version = "1.0-SNAPSHOT"
 
 [[platform.java11.dependency]]
-path = "./dependencies/poi-5.0.0.jar"
+path = "../dependencies/poi-5.0.0.jar"
 artifactId = "poi"
 groupId = "apache"
 version = "5.0.0"
 
 [[platform.java11.dependency]]
-path = "./dependencies/poi-ooxml-5.0.0.jar"
+path = "../dependencies/poi-ooxml-5.0.0.jar"
 artifactId = "poi-ooxml"
 groupId = "apache"
 version = "5.0.0"

@@ -1,4 +1,4 @@
-package lahiru.ballerina.excel;
+package malepathirana.ballerina.excel;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
