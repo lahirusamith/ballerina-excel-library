@@ -4,7 +4,7 @@ import ballerina/jballerina.java;
 #
 # + arg0 - The `string` value required to map with the Java method parameter.
 # + return - The `Workbook` or the `IOError` value returning from the Java mapping.
-function readFile(string arg0) returns Workbook|IOError {
+public function readFile(string arg0) returns Workbook|IOError {
     handle|error externalObj = malepathirana_ballerina_excel_FileReader_readFile(java:fromString(arg0));
     if (externalObj is error) {
         IOError e = error IOError(IOERROR, externalObj, message = externalObj.message());
@@ -20,7 +20,7 @@ function readFile(string arg0) returns Workbook|IOError {
 # + arg0 - The `Row` value required to map with the Java method parameter.
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + return - The `Cell` value returning from the Java mapping.
-function getCellAt(Row arg0, int arg1) returns Cell {
+public function getCellAt(Row arg0, int arg1) returns Cell {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getCellAt(arg0.jObj, arg1);
     Cell newObj = new (externalObj);
     return newObj;
@@ -30,7 +30,7 @@ function getCellAt(Row arg0, int arg1) returns Cell {
 #
 # + arg0 - The `Cell` value required to map with the Java method parameter.
 # + return - The `boolean` value returning from the Java mapping.
-function getCellDataAsBoolean(Cell arg0) returns boolean {
+public function getCellDataAsBoolean(Cell arg0) returns boolean {
     return malepathirana_ballerina_excel_FileReader_getCellDataAsBoolean(arg0.jObj);
 }
 
@@ -38,7 +38,7 @@ function getCellDataAsBoolean(Cell arg0) returns boolean {
 #
 # + arg0 - The `Cell` value required to map with the Java method parameter.
 # + return - The `Date` value returning from the Java mapping.
-function getCellDataAsDate(Cell arg0) returns Date {
+public function getCellDataAsDate(Cell arg0) returns Date {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getCellDataAsDate(arg0.jObj);
     Date newObj = new (externalObj);
     return newObj;
@@ -48,7 +48,7 @@ function getCellDataAsDate(Cell arg0) returns Date {
 #
 # + arg0 - The `Cell` value required to map with the Java method parameter.
 # + return - The `float` value returning from the Java mapping.
-function getCellDataAsDouble(Cell arg0) returns float {
+public function getCellDataAsDouble(Cell arg0) returns float {
     return malepathirana_ballerina_excel_FileReader_getCellDataAsDouble(arg0.jObj);
 }
 
@@ -56,7 +56,7 @@ function getCellDataAsDouble(Cell arg0) returns float {
 #
 # + arg0 - The `Cell` value required to map with the Java method parameter.
 # + return - The `string` value returning from the Java mapping.
-function getCellDataAsFormula(Cell arg0) returns string? {
+public function getCellDataAsFormula(Cell arg0) returns string? {
     return java:toString(malepathirana_ballerina_excel_FileReader_getCellDataAsFormula(arg0.jObj));
 }
 
@@ -64,7 +64,7 @@ function getCellDataAsFormula(Cell arg0) returns string? {
 #
 # + arg0 - The `Cell` value required to map with the Java method parameter.
 # + return - The `string` value returning from the Java mapping.
-function getCellDataAsString(Cell arg0) returns string? {
+public function getCellDataAsString(Cell arg0) returns string? {
     return java:toString(malepathirana_ballerina_excel_FileReader_getCellDataAsString(arg0.jObj));
 }
 
@@ -72,7 +72,7 @@ function getCellDataAsString(Cell arg0) returns string? {
 #
 # + arg0 - The `Cell` value required to map with the Java method parameter.
 # + return - The `CellType` value returning from the Java mapping.
-function getCellTypeEnum(Cell arg0) returns CellType {
+public function getCellTypeEnum(Cell arg0) returns CellType {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getCellTypeEnum(arg0.jObj);
     CellType newObj = new (externalObj);
     return newObj;
@@ -83,7 +83,7 @@ function getCellTypeEnum(Cell arg0) returns CellType {
 # + arg0 - The `Sheet` value required to map with the Java method parameter.
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + return - The `Row` value returning from the Java mapping.
-function getRowAt(Sheet arg0, int arg1) returns Row {
+public function getRowAt(Sheet arg0, int arg1) returns Row {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getRowAt(arg0.jObj, arg1);
     Row newObj = new (externalObj);
     return newObj;
@@ -93,7 +93,7 @@ function getRowAt(Sheet arg0, int arg1) returns Row {
 #
 # + arg0 - The `Row` value required to map with the Java method parameter.
 # + return - The `List` value returning from the Java mapping.
-function getFullRowDataAsStringArray(Row arg0) returns string[] {
+public function getFullRowDataAsStringArray(Row arg0) returns string[] {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray1(arg0.jObj);
     return convertToStringArray(externalObj);
 }
@@ -104,7 +104,7 @@ function getFullRowDataAsStringArray(Row arg0) returns string[] {
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + arg2 - The `int` value required to map with the Java method parameter.
 # + return - The `List` value returning from the Java mapping.
-function getRowDataAsStringArray(Row arg0, int arg1, int arg2) returns string[] {
+public function getRowDataAsStringArray(Row arg0, int arg1, int arg2) returns string[] {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getRowDataAsStringArray3(arg0.jObj, arg1, arg2);
      return convertToStringArray(externalObj);
 }
@@ -114,7 +114,7 @@ function getRowDataAsStringArray(Row arg0, int arg1, int arg2) returns string[] 
 # + arg0 - The `Workbook` value required to map with the Java method parameter.
 # + arg1 - The `int` value required to map with the Java method parameter.
 # + return - The `Sheet` value returning from the Java mapping.
-function getSheetAt(Workbook arg0, int arg1) returns Sheet {
+public function getSheetAt(Workbook arg0, int arg1) returns Sheet {
     handle externalObj = malepathirana_ballerina_excel_FileReader_getSheetAt(arg0.jObj, arg1);
     Sheet newObj = new (externalObj);
     return newObj;

@@ -2,7 +2,7 @@ import ballerina/jballerina.java;
 
 # Ballerina class mapping for the Java `org.apache.poi.ss.usermodel.Workbook` interface.
 @java:Binding {'class: "org.apache.poi.ss.usermodel.Workbook"}
-distinct class Workbook {
+public distinct class Workbook {
 
     *java:JObject;
 
@@ -26,7 +26,7 @@ distinct class Workbook {
 
 # Ballerina class mapping for the Java `org.apache.poi.ss.usermodel.Sheet` interface.
 @java:Binding {'class: "org.apache.poi.ss.usermodel.Sheet"}
-distinct class Sheet {
+public distinct class Sheet {
 
     *java:JObject;
 
@@ -50,7 +50,7 @@ distinct class Sheet {
 
 # Ballerina class mapping for the Java `org.apache.poi.ss.usermodel.Row` interface.
 @java:Binding {'class: "org.apache.poi.ss.usermodel.Row"}
-distinct class Row {
+public distinct class Row {
 
     *java:JObject;
 
@@ -74,7 +74,7 @@ distinct class Row {
 
 # Ballerina class mapping for the Java `org.apache.poi.ss.usermodel.Cell` interface.
 @java:Binding {'class: "org.apache.poi.ss.usermodel.Cell"}
-distinct class Cell {
+public distinct class Cell {
 
     *java:JObject;
 
@@ -98,7 +98,7 @@ distinct class Cell {
 
 # Ballerina class mapping for the Java `org.apache.poi.ss.usermodel.CellType` class.
 @java:Binding {'class: "org.apache.poi.ss.usermodel.CellType"}
-distinct class CellType {
+public distinct class CellType {
 
     *java:JObject;
 
@@ -122,7 +122,7 @@ distinct class CellType {
 
 # Ballerina class mapping for the Java `java.lang.Enum` class.
 @java:Binding {'class: "java.lang.Enum"}
-distinct class Enum {
+public distinct class Enum {
 
     *java:JObject;
 
@@ -146,7 +146,7 @@ distinct class Enum {
 
 # Ballerina class mapping for the Java `java.util.Date` class.
 @java:Binding {'class: "java.util.Date"}
-distinct class Date {
+public distinct class Date {
 
     *java:JObject;
 

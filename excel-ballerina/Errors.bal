@@ -1,7 +1,7 @@
-const IOERROR = "IOException";
+public const IOERROR = "IOException";
 
-type IOExceptionData record {
+public type IOExceptionData record {
     string message;
 };
 
-type IOError distinct error<IOExceptionData>;
+public type IOError distinct error<IOExceptionData>;
